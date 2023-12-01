@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faded Background Picture with Picture, Description, and Events</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid black;
+      padding: 10px;
+      background-image: url("C:\Users\meher\OneDrive\Desktop\club management system\toastmasters.jpg");
+      background-size: cover;
+      background-position: center;
+      background-color: #f2f2f2; /* Add desired background color */
+    }
+    .image-container {
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    .image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid black;
+    }
+    .description {
+      font-size: 18px;
+      color: blue;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px;
+    }
+    .events {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      color: black;
+    }
+.register-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff8800;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="image-container">
+      <img class="image" src="toastmasters.jpg" alt="Picture">
+    </div>
+    <div class="description">
+      <h1>TOASTMASTERS</h1>
+      Toastmasters International is a nonprofit educational organization that teaches public speaking and leadership skills through a worldwide network of clubs.
+      <br>
+      It is a place where you push your boundaries:<br>
+      1.In Public speaking<br>
+      2.In Leadership Skill development<br>
+      3.Impromptu speaking<br>
+      4.Confidence
+    </div>
+ <div class="events">
+<h3>PHOTOS</h3>
+<img src="###" width=60px height=50px ><br>
+<img src="###" width=60px height=50px ><br>
+<img src="###" width=60px height=50px ><br>
+</div>
+
+
+    <div class="events">
+      <h2>Events</h2>
+      <p>Event 1</p>
+      <p>Event 2</p>
+      <p>Event 3</p>
+    </div>
+    <a href="eventregistration.html" class="register-button">Register Now</a>
+  </div>
+</body>
+</html>

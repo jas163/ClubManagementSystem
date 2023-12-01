@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elegant Front Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+    }
+    .welcome-text {
+      text-align: center;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+    p {
+      font-size: 24px;
+      color: #555;
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+    .confetti-left,
+    .confetti-right {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .confetti-left {
+      left: 0;
+    }
+    .confetti-right {
+      right: 0;
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #e91e63;
+      opacity: 0;
+      animation: confetti-fall 3s forwards;
+    }
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes confetti-fall {
+      0% {
+        opacity: 0;
+        transform: translateY(-100vh) rotateZ(0deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(100vh) rotateZ(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="hero">
+    <div class="confetti-left"></div>
+    <div class="confetti-right"></div>
+    <div class="welcome-text">
+      <h1>Welcome to Club Management System</h1>
+      <p>Explore the world of efficient club management.</p>
+    </div>
+  </div>
+
+  <script>
+    // Generate random confetti
+    function createConfetti() {
+      const confettiColors = ['#e91e63', '#9c27b0', '#3f51b5', '#00bcd4', '#4caf50', '#ffeb3b', '#ff5722'];
+      const confettiContainerLeft = document.querySelector('.confetti-left');
+      const confettiContainerRight = document.querySelector('.confetti-right');
+      const confettiCount = 50;
+
+      function createSingleConfetti() {
+        const confetti = document.createElement('span');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDuration = `${1 + Math.random() * 2}s`;
+        return confetti;
+      }
+
+      function createConfettiBurst(container) {
+        for (let i = 0; i < confettiCount; i++) {
+          container.appendChild(createSingleConfetti());
+        }
+      }
+
+      createConfettiBurst(confettiContainerLeft);
+      createConfettiBurst(confettiContainerRight);
+    }
+
+    // Hide welcome text and show next page after delay
+    function hideWelcomeText() {
+      const welcomeText = document.querySelector('.welcome-text');
+      const nextPageDelay = 3000; // 3 seconds
+
+      setTimeout(function() {
+        welcomeText.style.opacity = '0';
+        setTimeout(function() {
+          window.location.href = 'homepage.html'; // Replace 'nextpage.html' with the actual URL of the next page
+        }, 1000);
+      }, nextPageDelay);
+    }
+
+    // Start confetti and hide welcome text
+    function startAnimation() {
+      createConfetti();
+      hideWelcomeText();
+    }
+
+    // Execute animation on page load
+    window.onload = startAnimation;
+  </script>
+</body>
+</html>

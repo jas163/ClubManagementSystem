@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>Delete Event - Club Management System</title>
+  
+<style>
+*{
+text-decoration: none;
+}
+.navbar{
+background:rgb(223,207,221);font-family:arial;padding-right:15px;padding-left:15px;
+}
+.navdiv{
+display:flex;align-items:center;justify-content:space-between;
+}
+.logo a{
+font-size:15px;font-weight:400;color:rgb(1, 3, 16);
+}
+li{
+list-style:none;display:inline-block;
+}
+li a{
+color:rgb(15, 15, 15);font-size:18px;font-weight:bold;margin-right:15px;
+}
+button{
+background-color:powderedblue;margin-left:10px;border-radius:10px;padding:15px;width:90px;
+}
+button a{
+color:rgb(246, 237, 237);font-weight:bold;font-size:10px;
+}
+.image2 {
+      margin-right: 100px;
+      width: 20mm;
+      height: 20mm;
+      border: 2px solid black;
+}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+	 background-image:url("delete.jpeg");
+      background-repeat:no-repeat;
+background-size:100%;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+<div class="navdiv">
+<div class="logo"><a href="#">
+    
+	<table>
+       <tr><td><img class="Image 5" src="vishnulogo.png"  width="50" height="50" alt="Image 5"></td>
+        <td>SHRI VISHNU ENGINEERING COLLEGE FOR WOMEN</td></tr> 
+    </table>
+        
+         
+        
+       
+    
+
+    </div>
+<ul>
+
+<a href="eventbuttons.html"><button>BACK</button></a>
+
+</ul>
+</div>
+</nav>
+<div class="container">
+    <h1>Delete Event</h1>
+    <form action="deleteevent.jsp" method="post">
+      <div class="form-group">
+        <label for="event_id">Name of the Event:</label>
+        <input type="text" id="event_id" name="event_name" placeholder="Enter Name of the Event" required>
+      </div>
+	<div class="form-group">
+	   <label>Reason to Delete: </label>
+	<input type="text" placeholder="Reason" required>
+      </div>	
+	
+      <input type="submit" value="Delete Event">
+    </form>
+  </div>
+</body>
+</html>

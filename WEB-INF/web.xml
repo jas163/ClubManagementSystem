@@ -1,0 +1,14 @@
+<web-app>
+<servlet>
+<servlet-name>BackEventRegistrationServlet</servlet-name>
+<servlet-class>BackEventRegistrationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>BackEventRegistrationServlet</servlet-name>
+<url-pattern>/BackEventRegistrationServlet</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+<welcome-file>confetti.html</welcome-file>
+</welcome-file-list>
+</web-app>
